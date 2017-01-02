@@ -1,6 +1,6 @@
 import javax.swing.JOptionPane;
 
-public class StephenHawking {
+public class StephenHawkingFizzBuzz {
 
 	public static void main(String[] args) {
 String thing = JOptionPane.showInputDialog("When should I stop counting?");
