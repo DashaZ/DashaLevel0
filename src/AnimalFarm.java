@@ -12,12 +12,13 @@ public class AnimalFarm {
 		 * 1. Ask the user which animal they want, then play the sound of that
 		 * animal.
 		 */
-JOptionPane.showInputDialog("What animal do you want");
-		/* 2. Make it so that the user can keep entering new animals
+		JOptionPane.showInputDialog("What animal do you want");
+		/*
+		 * 2. Make it so that the user can keep entering new animals
 		 */
-for (int i = 0; i < 5; i++) {
-JOptionPane.showInputDialo("What animal do you want?");
-}
+		for (int i = 0; i < 5; i++) {
+			JOptionPane.showInputDialog("What animal do you want?");
+		}
 	}
 
 	void playMoo() {
@@ -32,25 +33,24 @@ JOptionPane.showInputDialo("What animal do you want?");
 		playNoise(woofFile);
 	}
 
-	  String quackFile = "/Users/League/Google Drive/league-sounds/quack.wav";
+	String quackFile = "/Users/League/Google Drive/league-sounds/quack.wav";
 	String mooFile = "/Users/League/Google Drive/league-sounds/moo.wav";
 	String woofFile = "/Users/League/Google Drive/league-sounds/woof.wav";
 	String meowFile = "/Users/League/Google Drive/league-sounds/meow.wav";
 	String llamaFile = "/Users/League/Google Drive/league-sounds/llama.wav";
 
-
 	/* Ignore this stuff */
 
 	public void playNoise(String soundFile) {
-    	try {
-   		 AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(soundFile));
-   		 Clip clip = AudioSystem.getClip();
-   		 clip.open(audioInputStream);
-   		 clip.start();
-   		 Thread.sleep(3400);
-    	} catch (Exception ex) {
-        	ex.printStackTrace();
-    	}
+		try {
+			AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(soundFile));
+			Clip clip = AudioSystem.getClip();
+			clip.open(audioInputStream);
+			clip.start();
+			Thread.sleep(3400);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
 	}
 
 	public static void main(String[] args) {
@@ -58,5 +58,3 @@ JOptionPane.showInputDialo("What animal do you want?");
 	}
 
 }
-
-
