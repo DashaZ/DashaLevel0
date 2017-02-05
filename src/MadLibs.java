@@ -14,7 +14,7 @@ String sound=
 JOptionPane.showInputDialog("Insert animal sound");
 //What's your name gorilla?____;
 //Pinky? Thats great! The gorilla's name is Pinky! 
-JOptionPane.showMessageDialog(null, );
+
 
 
 }
