@@ -12,12 +12,29 @@ public class AnimalFarm {
 		 * 1. Ask the user which animal they want, then play the sound of that
 		 * animal.
 		 */
-		JOptionPane.showInputDialog("What animal do you want");
 		/*
 		 * 2. Make it so that the user can keep entering new animals
 		 */
 		for (int i = 0; i < 5; i++) {
-			JOptionPane.showInputDialog("What animal do you want?");
+			int userAnimal = (JOptionPane.showOptionDialog(null, "What Animal do You Want??", "#AnimalFarm", 0,
+					JOptionPane.INFORMATION_MESSAGE, null, new String[] { "Cow", "Duck", "Dog", "Cat", "Llama"}, null));
+	
+			if(userAnimal== 0){
+			playMoo();
+			
+		}
+			if(userAnimal== 1){
+				playQuack();
+	}
+			if(userAnimal== 2){
+				playWoof();
+		}
+			if(userAnimal== 3){
+				playMeow();
+		}
+			if(userAnimal== 4){
+				playLlama();
+		}
 		}
 	}
 
@@ -31,6 +48,12 @@ public class AnimalFarm {
 
 	void playWoof() {
 		playNoise(woofFile);
+	}
+	void playMeow() {
+		playNoise(meowFile);
+	}
+	void playLlama() {
+		playNoise(llamaFile);
 	}
 
 	String quackFile = "/Users/League/Google Drive/league-sounds/quack.wav";

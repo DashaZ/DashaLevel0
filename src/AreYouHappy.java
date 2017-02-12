@@ -1,21 +1,40 @@
+import java.net.URI;
+
 import javax.swing.JOptionPane;
 
 public class AreYouHappy {
-
 	public static void main(String[] args) {
-		String happy = JOptionPane.showInputDialog("Are You Happy?");
-		if (happy.equalsIgnoreCase("yes")) {
-			JOptionPane.showMessageDialog(null, "Keep doing what you're doing");
-		} else {
-			String want = JOptionPane.showInputDialog("Do you want to be happy?");
-
-			if (want.equalsIgnoreCase("no")) {
-				JOptionPane.showMessageDialog(null, "Keep doing what you are doing");
+		boolean keepDoing = false;
+		int happy =  JOptionPane.showConfirmDialog(null, "Are You Happy?");
+			if(happy == 0){
+				keepDoing = true;
+				//playVideo()
 			}
-			if (want.equals("yes")) {
+	else {
+			int want = JOptionPane.showConfirmDialog(null, "Do you want to be happy?");
+
+			if (want == 1) {
+				keepDoing=true;
+			}
+			if (want == 0) {
 				JOptionPane.showMessageDialog(null, "Change something.");
 			}
+		
+		}
+	
+	if(keepDoing){
+		JOptionPane.showMessageDialog(null, "Keep doing what you are doing");
 
 		}
 	}
+
+static void playVideo(String youTubeLink) {
+	try {
+		URI uri = new URI(youTubeLink);
+		java.awt.Desktop.getDesktop().browse(uri);
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
 }
+}
+	
